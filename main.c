@@ -1,6 +1,6 @@
 #include "monty.h"
 
-mont_t st;
+
 /**
  * free_st - frees global variable
  *
@@ -12,18 +12,13 @@ void free_st(void)
 	free(st.buff);
 	fclose(st.fd);
 }
-/**
- * main - entry point
- * argc: arguement count
- * @argv: arguement vector
- * Return: o on success else otherwise
- */
+
 
 /**
  * start_st - initializes global variables
  * @fd: file descriptor
  * Return: no retrn
- * /
+ */
 void start_st(FILE *fd)
 {
 	st.elem = 1;
@@ -33,7 +28,7 @@ void start_st(FILE *fd)
 	st.buff = NULL;
 }
 /**
- * checks_input = check if file exist and opened
+ * checks_input - check if file exist and opened
  * @argc: arguement count
  * @argv: arguement vector
  * Return: file struct
@@ -56,9 +51,16 @@ FILE *checks_input(int argc, char *argv[])
 	}
 	return (fd);
 }
-
+/**
+ * main - enry point
+ *
+ * @argc: arguement count
+ * @argv: arguement vector
+ * Return: 0 o success
+ */
 int main(int argc, char *argv[])
 {
+	mont_t st;
 	void (*f)(stack_t **stack, unsigned int line_number);
 	FILE *fd;
 	ssize_t size = 256;

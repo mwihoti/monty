@@ -9,7 +9,8 @@
 void op_push(stack_t **head, unsigned int curline)
 {
 	int n, j;
-	if(!st.arg)
+
+	if (!st.arg)
 	{
 		fprintf(stderr, "L%u: ", curline);
 		fprintf(stderr, "Usage: push integer\n");
@@ -18,7 +19,7 @@ void op_push(stack_t **head, unsigned int curline)
 	}
 	for (j = 0; st.arg[j] != '\0'; j++)
 	{
-		if(!isdigit(st.arg[j]) && st.arg[j] != '-')
+		if (!isdigit(st.arg[j]) && st.arg[j] != '-')
 		{
 			fprintf(stderr, "L%u: ", curline);
 			fprintf(stderr, "usage: push integer\n");
@@ -27,7 +28,7 @@ void op_push(stack_t **head, unsigned int curline)
 		}
 	}
 	n = atoi(st.arg);
-	if(st.elem == 1)
+	if (st.elem == 1)
 		add_node(head, n);
 	else
 		add_nodeend(head, n);
@@ -55,14 +56,14 @@ void op_pall(stack_t **head, unsigned int curline)
  * op_pint - prints top value of stack
  *
  * @head: link list head
- * curline: line number
+ * @curline: line number
  * Return: nothing
  */
 void op_pint(stack_t **head, unsigned int curline)
 {
 	(void)curline;
 
-	if(*head == NULL)
+	if (*head == NULL)
 	{
 		fprintf(stderr, "L%u: ", curline);
 		fprintf(stderr, "can't pint, stack empty\n");
@@ -80,6 +81,7 @@ void op_pint(stack_t **head, unsigned int curline)
 void op_pop(stack_t **head, unsigned int curline)
 {
 	stack_t *nm;
+
 	if (head == NULL || *head == NULL)
 	{
 		fprintf(stderr, "L%u: can't pop an empty stack\n", curline);
@@ -91,19 +93,21 @@ void op_pop(stack_t **head, unsigned int curline)
 	free(nm);
 }
 /**
- * pop_swap - swaps top 2 element in stack
+ * op_swap - swaps top 2 element in stack
  * @head: head of linked list
- * curline: line number
+ * @curline: line number
  * Return: nothing
  */
 void op_swap(stack_t **head, unsigned int curline)
 {
 	int k = 0;
-	stack_t *nm = NULL;
+
+	stack_t *nm = NULL
+		;
 	nm = *head;
 
-	for (; nm != NULL; nm = nm->next, k++);
-
+	for (; nm != NULL; nm = nm->next, k++)
+		;
 	if (k < 2)
 	{
 		fprintf(stderr, "L%u: can't swap, stack too short\n", curline);

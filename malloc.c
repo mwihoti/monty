@@ -1,7 +1,7 @@
 #include "monty.h"
 /**
  * get_calloc - concate two strings
- * nmel: number of elements
+ * @nmel: number of elements
  * @size: type of elements
  * Return: nothing
  */
