@@ -43,10 +43,10 @@ int srch(char *s, char c)
 		return (0);
 }
 /**
- * _strtoky - functions that cut a string into tokens 
+ * _strtoky - functions that cut a string into tokens
  * @s: string to cut in parts
  * @d: delimeters
- * @Return: first partition
+ * Return: first partition
  */
 char *_strtoky(char *s, char *d)
 {
@@ -64,10 +64,12 @@ char *_strtoky(char *s, char *d)
 			s = s + j;
 			return (s);
 		}
-		else if (srch(d, s[i]) == 0 && s[i + 1] == '\0')
+		else if (srch(d, s[i]) == 0 && srch(d, s[i + 1]) == 0)
+			i++;
+		else if (srch(d, s[i]) == 0 && srch(d, s[i + 1]) == 1)
 		{
 			ult = s + i + 1;
-			ult = '\0';
+			*ult = '\0';
 			ult++;
 			s = s + j;
 			return (s);
@@ -80,4 +82,3 @@ char *_strtoky(char *s, char *d)
 	}
 	return (NULL);
 }
-
