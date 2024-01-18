@@ -64,7 +64,11 @@ void op_swap(stack_t **head, unsigned int curline);
 /*get */
 void (*get_ops(char *opc))(stack_t **stack, unsigned int line_number)
 /*double link func*/
-
+int srch(char *s, char c);
+char *_strtoky(char *s, char *d);
+void free_listint(stack_t *head);
+void *get_calloc(unsigned int nmel, unsigned int size);
+void get_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 stack_t *add_node(stack_t **head, const int n);
 stack_t *add_nodeend(stack_t **head, const int n);
 int get_strcmp(char *c1, char *c2);

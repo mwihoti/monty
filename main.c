@@ -8,6 +8,9 @@ mont_t st;
  */
 void free_st(void)
 {
+	free_listint(st.head);
+	free(st.buff);
+	fclose(st.fd);	
 }
 /**
  * main - entry point
@@ -15,6 +18,44 @@ void free_st(void)
  * @argv: arguement vector
  * Return: o on success else otherwise
  */
+
+/**
+ * start_st - initializes global variables
+ * @fd: file descriptor
+ * Return: no retrn
+ * */
+void start_st(FILE *fd)
+{
+	st.elem = 1;
+	st.curr = 1;
+	st.arg = NULL;
+	st.fd = fd;
+	st.buff = NULL;
+}
+/**
+ * checks_input = check if file exist and opened
+ * @argc: arguement count
+ * @argv: arguement vector
+ * Return: file struct
+ */
+FILE *checks_input(int argc, char *argv[])
+{
+	FILE *fd;
+
+	if (argc == 1 || argc > 2)
+	{
+		fprintf(stderr, "USAGE: monty file\n");
+		exit(EXIT_FAILURE);
+	}
+	fd = fopen(argv[1], "r");
+
+	if (fd == NULL)
+	{
+		fprintf(stderr," Error: Can't open file %s\n", argv[1]);
+		exit(EXIT_FAILURE);
+	}
+	return(fd);
+}
 
 int main(int argc, char *argv[])
 {
@@ -24,7 +65,7 @@ int main(int argc, char *argv[])
 	ssize_t numlines = 0;
 	char *lines[2] = {NULLL, NULL};
 
-	fd = check_input(argc, argv);
+	fd = checks_input(argc, argv);
 	start_st(fd);
 	numlines = getline(&st.buff, &size, fd);
 	while (numlines != -1)
