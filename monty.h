@@ -39,7 +39,7 @@ typedef struct mont
 	char *arg;
 	stack_t *head;
 	FILE *fd;
-	char *buffer;
+	char *buff;
 }mont_t;
 extern mont_t st;
 /**

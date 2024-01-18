@@ -20,7 +20,7 @@ void *get_calloc(unsigned int nmel, unsigned int size)
 	{
 		return (NULL);
 	}
-	for (i = 0; i < (nmel * size); 1++)
+	for (i = 0; i < (nmel * size); i++)
 	{
 		*((char *)(p) + i) = 0;
 	}
@@ -40,11 +40,14 @@ void get_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 
 	if (new_size == old_size)
 		return (ptr);
+
 	if (ptr == NULL)
 	{
 		p = malloc(new_size);
 		if (!p)
-			return (NULL);
+		{
+			exit(EXIT_FAILURE);
+		}
 		return (p);
 	}
 	if (new_size == 0 && ptr != NULL)
@@ -56,7 +59,9 @@ void get_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	{
 		p = malloc(new_size);
 		if (!p)
-			return (NULL);
+		{
+			exit(EXIT_FAILURE);
+		}
 		for (i = 0; i < old_size; i++)
 			p[i] = *((char *)ptr + i);
 		free(ptr);
@@ -65,7 +70,9 @@ void get_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	{
 		p = malloc(new_size);
 		if (!p)
-			return (NULL);
+		{
+			exit(EXIT_FAILURE);
+		}
 		for (i = 0; i < new_size; i++)
 			p[i] = *((char *)ptr + i);
 		free(ptr);
