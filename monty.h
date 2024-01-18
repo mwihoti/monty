@@ -61,11 +61,13 @@ void op_pall(stack_t **head, unsigned int curline);
 void op_pint(stack_t **head, unsigned int curline);
 void op_pop(stack_t **head, unsigned int curline);
 void op_swap(stack_t **head, unsigned int curline);
+/*get */
+void (*get_ops(char *opc))(stack_t **stack, unsigned int line_number)
 /*double link func*/
 
 stack_t *add_node(stack_t **head, const int n);
 stack_t *add_nodeend(stack_t **head, const int n);
-
+int get_strcmp(char *c1, char *c2);
 /*main*/
 void free_st(void);
 #endif
