@@ -1,4 +1,5 @@
 #include "monty.h"
+#include <stdio.h>
 /**
  * get_calloc - concate two strings
  * @nmel: number of elements
@@ -33,7 +34,7 @@ void *get_calloc(unsigned int nmel, unsigned int size)
  * @new_size: new number of bytes
  * Return: nothing
  */
-void get_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
+void *get_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
 	char *p = NULL;
 	unsigned int i;
