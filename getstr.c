@@ -9,7 +9,9 @@ int get_strcmp(char *c1, char *c2)
 {
 	int i;
 
-	for (i = 0; c1[i] == c2[i] && c1[i]; i++);
+	for (i = 0; c1[i] == c2[i] && c1[i]; i++)
+		;
+
 	if (c1[i] > c2[i])
 		return (1);
 	if (c1[i] < c2[i])
@@ -26,6 +28,7 @@ int get_strcmp(char *c1, char *c2)
 int srch(char *s, char c)
 {
 	int curr = 0;
+
 	while (s[curr] != '\0')
 	{
 		if (s[curr] == c)
@@ -40,7 +43,7 @@ int srch(char *s, char c)
 		return (0);
 }
 /**
- * _strtoky - functions that cut a string into tokens depending on delimit
+ * _strtoky - functions that cut a string into tokens 
  * @s: string to cut in parts
  * @d: delimeters
  * @Return: first partition
