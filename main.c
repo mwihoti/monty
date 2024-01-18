@@ -10,7 +10,7 @@ void free_st(void)
 {
 	free_listint(st.head);
 	free(st.buff);
-	fclose(st.fd);	
+	fclose(st.fd);
 }
 /**
  * main - entry point
@@ -23,7 +23,7 @@ void free_st(void)
  * start_st - initializes global variables
  * @fd: file descriptor
  * Return: no retrn
- * */
+ * /
 void start_st(FILE *fd)
 {
 	st.elem = 1;
@@ -51,10 +51,10 @@ FILE *checks_input(int argc, char *argv[])
 
 	if (fd == NULL)
 	{
-		fprintf(stderr," Error: Can't open file %s\n", argv[1]);
+		fprintf(stderr, " Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	return(fd);
+	return (fd);
 }
 
 int main(int argc, char *argv[])
@@ -74,7 +74,7 @@ int main(int argc, char *argv[])
 		if (lines[0] && lines[]0[0] != '#')
 		{
 			f = get_ops(lines[0]);
-			if(!f)
+			if (!f)
 			{
 				fprintf(stderr, "L%u: ", st.curr);
 				fprintf(stderr, "unknown instructions %s\n", lines[0]);
