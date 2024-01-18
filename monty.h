@@ -1,5 +1,5 @@
-#ifndef MONTY
-#define MONTY
+#ifndef MONTY_H
+#define MONTY_H
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -7,7 +7,7 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <ctype.h>
-
+#include <sys/types.h>
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -41,7 +41,7 @@ typedef struct mont
 	FILE *fd;
 	char *buffer;
 }mont_t;
-extern mont-t st;
+extern mont_t st;
 /**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
@@ -55,7 +55,12 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
-
+/*opcode*/
+void op_push(stack_t **head, unsigned int curline);
+void op_pall(stack_t **head, unsigned int curline);
+void op_pint(stack_t **head, unsigned int curline);
+void op_pop(stack_t **head, unsigned int curline);
+void op_swap(stack_t **head, unsigned int curline);
 /*double link func*/
 
 stack_t *add_node(stack_t **head, const int n);
