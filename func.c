@@ -70,4 +70,19 @@ stack_t *add_node(stack_t **head, const int n)
 	*head = temp;
 	return (*head);
 }
+/**
+ * free_listint - free linked list
+ *
+ * @head: head of list
+ * Return: no return
+ */
+void free_listint(stack_t *head)
+{
+	stack_t *tmp;
 
+	while ((tmp = head) != NULL)
+	{
+		head = head->next;
+		free(tmp);
+	}
+}

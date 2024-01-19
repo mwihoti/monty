@@ -1,6 +1,6 @@
 #ifndef MONTY_H
 #define MONTY_H
-
+#define _GNU_SOURCE
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -39,7 +39,7 @@ typedef struct mont
 	char *arg;
 	stack_t *head;
 	FILE *fd;
-	char *buffer;
+	char *buff;
 }mont_t;
 extern mont_t st;
 /**
@@ -68,7 +68,7 @@ int srch(char *s, char c);
 char *_strtoky(char *s, char *d);
 void free_listint(stack_t *head);
 void *get_calloc(unsigned int nmel, unsigned int size);
-void get_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
+void *get_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 stack_t *add_node(stack_t **head, const int n);
 stack_t *add_nodeend(stack_t **head, const int n);
 int get_strcmp(char *c1, char *c2);
