@@ -1,8 +1,6 @@
-#include<stdio.h>
-#include<string.h>
 #include "monty.h"
-mont_t st;
 
+mont_t st;
 
 /**
  * free_st - frees global variable
@@ -64,6 +62,8 @@ FILE *checks_input(int argc, char *argv[])
  */
 int main(int argc, char *argv[])
 {
+	mont_t st;
+
 	void (*f)(stack_t **stack, unsigned int line_number);
 	FILE *fd;
 	size_t size = 256;
