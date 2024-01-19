@@ -1,4 +1,5 @@
-#include <stdio.h>
+#include<stdio.h>
+#include<string.h>
 #include "monty.h"
 
 
@@ -26,6 +27,7 @@ void start_st(FILE *fd)
 	st.elem = 1;
 	st.curr = 1;
 	st.arg = NULL;
+	st.head = NULL;
 	st.fd = fd;
 	st.buff = NULL;
 }
@@ -65,7 +67,7 @@ int main(int argc, char *argv[])
 	mont_t st;
 	void (*f)(stack_t **stack, unsigned int line_number);
 	FILE *fd;
-	ssize_t size = 256;
+	size_t size = 256;
 	ssize_t numlines = 0;
 	char *lines[2] = {NULL, NULL};
 
