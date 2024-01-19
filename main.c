@@ -1,5 +1,3 @@
-#include<stdio.h>
-#include<string.h>
 #include "monty.h"
 mont_t st;
 
