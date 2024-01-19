@@ -1,5 +1,8 @@
+#include<stdio.h>
+#include<string.h>
 #include "monty.h"
 mont_t st;
+
 
 /**
  * free_st - frees global variable
@@ -24,6 +27,7 @@ void start_st(FILE *fd)
 	st.elem = 1;
 	st.curr = 1;
 	st.arg = NULL;
+	st.head = NULL;
 	st.fd = fd;
 	st.buff = NULL;
 }
