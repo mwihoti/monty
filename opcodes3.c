@@ -23,3 +23,23 @@ void op_pchar(stack_t **charc, unsigned int charline)
 	}
 	printf("%c\n", (*charc)->n);
 }
+/**
+ * op_pstr - prints string at top followed by new line
+ * @strline: line number
+ * @ppstr: head of linked list
+ * Return: nothing
+ */
+void op_pstr(stack_t **ppstr, unsigned int strline)
+{
+	stack_t *nm;
+	(void)strline;
+
+	nm = *ppstr;
+
+	while (nm && nm->n > 0 && nm->n < 128)
+	{
+		printf("%c", nm->n);
+		nm = nm->next;
+	}
+	printf("\n");
+}

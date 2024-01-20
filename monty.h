@@ -67,6 +67,7 @@ void op_sub(stack_t **stack, unsigned int curline);
 void op_div(stack_t **divs, unsigned int divline);
 void op_mul(stack_t **mult, unsigned int multline);
 void op_pchar(stack_t **charc, unsigned int charline);
+void op_pstr(stack_t **ppstr, unsigned int strline);
 /*get */
 void (*get_ops(char *opc))(stack_t **stack, unsigned int line_number);
 /*double link func*/
