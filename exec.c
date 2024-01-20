@@ -30,8 +30,7 @@ void executes_file(stack_t **stack)
  */
 void executes_opcode(char *opcode, stack_t **stack, unsigned int line_number)
 {
-	instruction_t instructions[] =
-	{
+	instruction_t instructions[] = {
 		{"push", opc_push},
 		{"pall", opc_pall},
 		{"pint", opc_pint},

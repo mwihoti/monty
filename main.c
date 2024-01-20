@@ -22,8 +22,6 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 
-        
-
 	st.file = fopen(argv[1], "r");
 	if (st.file == NULL)
 	{

@@ -51,7 +51,7 @@ int is_number(char *str)
 	}
 	return (1);
 }
-/*
+/**
  * opc_pall - prints all values on stack
  * @stack: stack pointer
  * line_number: line number of opcode
@@ -60,7 +60,7 @@ int is_number(char *str)
 void opc_pall(stack_t **stack, unsigned int line_number)
 {
 	stack_t *curr = *stack;
-	
+
 	while (curr != NULL)
 	{
 		printf("%d\n", curr->n);
@@ -69,7 +69,7 @@ void opc_pall(stack_t **stack, unsigned int line_number)
 	}
 
 }
-/*
+/**
  * opc_pint - prints all values on stack
  * @stack: stack pointer
  * line_number: line number of opcode
@@ -85,7 +85,7 @@ void opc_pint(stack_t **stack, unsigned int line_number)
 	}
 	printf("%d\n", (*stack)->n);
 }
-/*
+/**
  * opc_pop - prints all values on stack
  * @stack: stack pointer
  * line_number: line number of opcode
