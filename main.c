@@ -1,5 +1,7 @@
 #include "monty.h"
+
 mont_t st;
+
 /**
  * main - enry point
  *
