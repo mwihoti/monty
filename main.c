@@ -9,7 +9,7 @@ mont_t st;
  */
 int main(int argc, char *argv[])
 {
-	mont_t st;
+
 
 	void (*f)(stack_t **stack, unsigned int line_number);
 	FILE *fd;
