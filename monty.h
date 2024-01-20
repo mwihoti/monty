@@ -70,6 +70,9 @@ void op_pchar(stack_t **charc, unsigned int charline);
 void op_pstr(stack_t **ppstr, unsigned int strline);
 void op_rotlt(stack_t **rtr, unsigned int rtrline);
 void op_rotr(stack_t **rtr, unsigned int rtrline);
+
+void op_stack(stack_t **stac, unsigned int stacline);
+void op_queue(stack_t **que, unsigned int queline);
 /*get */
 void (*get_ops(char *opc))(stack_t **stack, unsigned int line_number);
 /*double link func*/

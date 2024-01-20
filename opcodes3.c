@@ -98,3 +98,18 @@ void op_rotr(stack_t **rtr, unsigned int rtrline)
 	(*rtr)->prev = rt;
 	*rtr = rt;
 }
+/**
+ * op_queue - sets the format of data to queue
+ *
+ * @que: head of list
+ * @queline: line number
+ * Return: nothing
+ */
+
+void op_queue(stack_t **que, unsigned int queline)
+{
+	(void)que;
+	(void)queline;
+
+	st.elem = 0;
+}
