@@ -72,4 +72,29 @@ void op_rotlt(stack_t **rtr, unsigned int rtrline)
 	(*rtr)->prev = rt1;
 	*rtr = rt;
 }
+/**
+ * op_rotlt - rotates the stack to the top
+ * @rtr: head of linked list
+ * @rtrline: line number
+ * Return: nothing
+ */
+void op_rotr(stack_t **rtr, unsigned int rtrline)
+{
+	stack_t *rt = NULL;
+        (void)rtrline;
 
+	if (*rtr == NULL)
+                return;
+
+        if ((*rtr)->next == NULL)
+                return;
+	rt = *rtr;
+
+	for (; rt->next != NULL; rt = rt->next)
+		;
+	rt->prev->next = NULL;
+	rt->next = *rtr;
+	rt->prev = NULL;
+	(*rtr)->prev = rt;
+	*rtr = rt;
+}
