@@ -78,6 +78,6 @@ void opc_pstr(stack_t **stack, unsigned int line_number);
 /* Stack helper functions */
 stack_t *add_node(stack_t **stack, const int n);
 int is_number(char *str);
-void free_stack(stack_t *stack);
+void frees_stack(stack_t *stack);
 
 #endif /* monty.h */

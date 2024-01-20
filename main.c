@@ -1,5 +1,4 @@
 #include "monty.h"
-
 mont_t st;
 
 /**
@@ -11,6 +10,10 @@ mont_t st;
  */
 int main(int argc, char *argv[])
 {
+
+
+
+
 	stack_t *stack = NULL;
 
 	if (argc != 2)
@@ -19,6 +22,8 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 
+        
+
 	st.file = fopen(argv[1], "r");
 	if (st.file == NULL)
 	{
@@ -26,9 +31,9 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 
-	execute_file(&stack);
+	executes_file(&stack);
 	fclose(st.file);
 	free(st.line);
-	free_stack(stack);
+	frees_stack(stack);
 	exit(EXIT_SUCCESS);
 }
