@@ -63,3 +63,35 @@ void op_sub(stack_t **stack, unsigned int curline)
 	nm->n -= (*stack)->n;
 	op_pop(stack, curline);
 }
+/**
+ * op_div - divides the second top elm of stack by second elem
+ * @divs: head of list
+ * @divline: line number
+ * Return: nothing
+ */
+void op_div(stack_t **divs, unsigned int divline)
+{
+	int k = 0;
+	stack_t *nm = NULL;
+
+	nm = *divs;
+
+	for(; nm != NULL; nm = nm->next, k++)
+		;
+	if (k < 2)
+	{
+		fprintf(stderr, "L%u: can't div, stack too short\n", divline);
+		free_st();
+		exit(EXIT_FAILURE);
+	}
+
+	if ((*divs)->n == 0)
+	{
+		fprintf(stderr, "L%u: division by zero\n", divline);
+		free_st();
+		exit(EXIT_FAILURE);
+	}
+	nm = (*divs)->next;
+	nm->n /= (*divs)->n;
+	op_pop(divs, divline);
+}
