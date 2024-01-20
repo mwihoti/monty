@@ -68,6 +68,7 @@ void op_div(stack_t **divs, unsigned int divline);
 void op_mul(stack_t **mult, unsigned int multline);
 void op_pchar(stack_t **charc, unsigned int charline);
 void op_pstr(stack_t **ppstr, unsigned int strline);
+void op_rotlt(stack_t **rtr, unsigned int rtrline);
 /*get */
 void (*get_ops(char *opc))(stack_t **stack, unsigned int line_number);
 /*double link func*/

@@ -6,7 +6,7 @@
  * @charline: line number
  * Return: nothing
  */
- 
+
 void op_pchar(stack_t **charc, unsigned int charline)
 {
 	if (charc == NULL || *charc == NULL)
@@ -43,3 +43,33 @@ void op_pstr(stack_t **ppstr, unsigned int strline)
 	}
 	printf("\n");
 }
+/**
+ * op_rotlt - rotates the stack to the top
+ * @rtr: head of linked list
+ * @rtrline: line number
+ * Return: nothing
+ */
+void op_rotlt(stack_t **rtr, unsigned int rtrline)
+{
+	stack_t *rt = NULL;
+	stack_t *rt1 = NULL;
+	(void)rtrline;
+
+	if (*rtr == NULL)
+		return;
+
+	if ((*rtr)->next == NULL)
+		return;
+
+	rt = (*rtr)->next;
+	rt1 = *rtr;
+
+	for (; rt1->next != NULL; rt1 = rt1->next)
+		;
+	rt->prev = NULL;
+	rt1->next = *rtr;
+	(*rtr)->next = NULL;
+	(*rtr)->prev = rt1;
+	*rtr = rt;
+}
+
