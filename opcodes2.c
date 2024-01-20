@@ -95,3 +95,30 @@ void op_div(stack_t **divs, unsigned int divline)
 	nm->n /= (*divs)->n;
 	op_pop(divs, divline);
 }
+/**
+ * op_mul - multiplies top and second elements of stack
+ *
+ * @mult: head of list
+ * @multline: line number
+ * Return: nothing
+ */
+void op_mul(stack_t **mult, unsigned int multline)
+{
+	int k = 0;
+	stack_t *nm = NULL;
+
+	nm = *mult;
+
+	for (; nm != NULL; nm = nm->next, k++)
+		;
+	if (k < 2)
+	{
+		fprintf(stderr, "L%u: can't mul, stack too short\n", multline);
+		free_st();
+		exit(EXIT_FAILURE);
+	}
+
+	nm = (*mult)->next;
+	nm->n *= (*mult)->n;
+	op_pop(mult, multline);
+}

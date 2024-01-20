@@ -18,6 +18,7 @@ void (*get_ops(char *opc))(stack_t **stack, unsigned int line_number)
 		{"nop", op_nop},
 		{"sub", op_sub},
 		{"div", op_div},
+		{"mul", op_mul},
 		{NULL, NULL}
 	};
 	int i;
