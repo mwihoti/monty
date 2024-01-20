@@ -76,7 +76,7 @@ void op_div(stack_t **divs, unsigned int divline)
 
 	nm = *divs;
 
-	for(; nm != NULL; nm = nm->next, k++)
+	for (; nm != NULL; nm = nm->next, k++)
 		;
 	if (k < 2)
 	{
