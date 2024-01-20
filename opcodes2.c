@@ -37,3 +37,29 @@ void op_nop(stack_t **stack, unsigned int curline)
 	(void)stack;
 	(void)curline;
 }
+/**
+ * op_sub - subtracts the top elem with second elem
+ * @stack: head of list
+ * @curline: line number
+ * Return: nothing
+ */
+void op_sub(stack_t **stack, unsigned int curline)
+{
+	int k = 0;
+	stack_t *nm = NULL;
+
+	nm = *stack;
+
+	for (; nm != NULL; nm = nm->next, k++)
+		;
+
+	if (k < 2)
+	{
+		fprintf(stderr, "L%u: can't sub, stack too short\n", curline);
+		free_st();
+		exit(EXIT_FAILURE);
+	}
+	nm = (*stack)->next;
+	nm->n -= (*stack)->n;
+	op_pop(stack, curline);
+}
