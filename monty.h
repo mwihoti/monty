@@ -62,6 +62,7 @@ void op_pint(stack_t **head, unsigned int curline);
 void op_pop(stack_t **head, unsigned int curline);
 void op_swap(stack_t **head, unsigned int curline);
 void op_add(stack_t **stack, unsigned int curline);
+void op_nop(stack_t **stack, unsigned int curline);
 /*get */
 void (*get_ops(char *opc))(stack_t **stack, unsigned int line_number);
 /*double link func*/
